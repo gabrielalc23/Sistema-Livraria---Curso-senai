@@ -42,19 +42,19 @@ const Cadastro = () => {
             <Card className="pt-5 mt-5">
                 <Card.Header className="text-center bg-dark text-white">Cadastre-se</Card.Header>
                 <Card.Body className="bg-dark">
-                    <Form.Label>Digite o seu nome</Form.Label>
+                    <Form.Label className="text-white">Digite o seu nome</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Insira seu nome"
                         onChange={n => setName(n.target.value)}
                         required />
-                    <Form.Label>Digite o seu email</Form.Label>
+                    <Form.Label className="text-white">Digite o seu email</Form.Label>
                     <Form.Control
                         type="email"
                         placeholder="Insira seu email"
                         onChange={e => setEmail(e.target.value)}
                         required />
-                    <Form.Label>Digite a sua senha</Form.Label>
+                    <Form.Label className="text-white">Digite a sua senha</Form.Label>
 
                     <div className="input-group">
 
