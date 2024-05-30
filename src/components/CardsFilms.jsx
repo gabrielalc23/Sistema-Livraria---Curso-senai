@@ -9,7 +9,7 @@ const CardsFilms = () => {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get('http://143.198.156.185/api/home');
+                const response = await axios.get('http://143.198.156.185/api/filmes');
                 setData(response.data);
             } catch (error) {
                 console.error('Erro ao buscar dados:', error);
@@ -20,39 +20,35 @@ const CardsFilms = () => {
 
     return (
         <>
-            <Card className="mt-5">
-                <Card.Header>Veja papai</Card.Header>
-                <Card.Body>
-                    {data.map(item => (
-                        <div key={item.id}>
-                            <h2>{item.titulo}</h2>
-                            <p>{item.sinopse}</p>
-                            <p><img src={item.url_thumbnail} alt="" width={200} /></p>
-                            <p>
-                                <iframe
-                                    src={item.url_video}
-                                    frameborder="0"
-                                    width="560"
-                                    height="315"
-                                    title="YouTube video player"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen
-                                ></iframe>
-                            </p>
-                            <p>{item.qtd_favoritos}</p>
-                            <p>{item.qtd_valor}</p>
-                            <p>{item.categoria}</p>
-                            <div>
-                                {item.imagens.map((imagem, index) => (
-                                    <img key={index} src={imagem} width={200} />
-                                ))}
-                            </div>
-                        </div>
+            <div className="col-sm-4 col-md-4 col-lg-4">
 
-                    ))}
-                </Card.Body>
-            </Card>
+                {data.map((item) => (
+                    <Card key={item.id} className="mt-3">
+                        <div className="w-50 d-flex justify-content-center align-itemns-center">
+                            <Card.Img variant="top" src={item.url_thumbnail} />
+                        </div>
+                        <Card.Body>
+                            <Card.Title>{item.titulo}</Card.Title>
+                            <Card.Text>{item.sinopse}</Card.Text>
+                            <Card.Text>
+                                <strong>Categoria:</strong> {item.categoria}
+                            </Card.Text>
+                            <Card.Text>
+                                <strong>Quantidade de favoritos:</strong> {item.qtd_favoritos}
+                            </Card.Text>
+                            <Card.Text>
+                                <strong>Quantidade de valor:</strong> {item.qtd_valor}
+                            </Card.Text>
+                            <Card.Text>
+                                {item.imagens.map((imagem, index) => (
+                                    <img key={index} src={imagem.url} alt="" width={100} />
+                                ))}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                ))}
+
+            </div>
         </>
     )
 }
