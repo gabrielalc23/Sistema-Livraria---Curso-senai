@@ -42,7 +42,7 @@ const CardsBooks = () => {
                 </Card.Text>
                 <Card.Text>
                   {item.imagens.map((imagem, index) => (
-                    <img key={index} src={imagem.url} alt="" width={100} />
+                    <img key={index} src={imagem.url} width={100} />
                   ))}
                 </Card.Text>
               </Card.Body>

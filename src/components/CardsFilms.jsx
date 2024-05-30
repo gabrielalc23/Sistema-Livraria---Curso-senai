@@ -23,12 +23,12 @@ const CardsFilms = () => {
             <div className="col-sm-4 col-md-4 col-lg-4">
 
                 {data.map((item) => (
-                    <Card key={item.id} className="mt-3">
-                        <div className="w-50 d-flex justify-content-center align-itemns-center">
-                            <Card.Img variant="top" src={item.url_thumbnail} />
+                    <Card key={item.id} className="mt-3 bg-warning rounded ">
+                        <div className="w-50 mx-auto d-block mt-2">
+                            <Card.Img variant="top" src={item.url_thumbnail} className="border border-4 rounded p-1 img-fluid" />
                         </div>
                         <Card.Body>
-                            <Card.Title>{item.titulo}</Card.Title>
+                            <Card.Title className="display-6 border-bottom border-2">{item.titulo}</Card.Title>
                             <Card.Text>{item.sinopse}</Card.Text>
                             <Card.Text>
                                 <strong>Categoria:</strong> {item.categoria}
