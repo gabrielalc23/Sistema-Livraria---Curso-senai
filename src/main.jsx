@@ -13,6 +13,7 @@ import Filme from './pages/Filme.jsx';
 import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import Cadastro from './pages/Cadastro.jsx';
+import FilmePage from './pages/FilmePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/filme/:id",
+    element: <FilmePage />
   },
   {
     path: "/Cadastre-se",

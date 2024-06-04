@@ -9,7 +9,7 @@ const Livros = () => {
                 <LivrosCarrosel />
                 <LivrosCard />
             </div>
-            </>
-);
+        </>
+    );
 }
 export default Livros;

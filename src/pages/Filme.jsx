@@ -3,7 +3,7 @@ import FilmesCarrosel from "../components/FilmesCarrosel";
 import CardsFilms from "../components/CardsFilms";
 
 
-const Filme = () => {
+export default function Filme(){
     return (
             <div className="bg-dark">
                 <Container>
@@ -13,4 +13,3 @@ const Filme = () => {
             </div>
     );
 }
-export default Filme;
